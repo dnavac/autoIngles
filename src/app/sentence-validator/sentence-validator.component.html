@@ -1,0 +1,9 @@
+<div>
+  <h2>Validador de Frases en Inglés</h2>
+  <form #sentenceForm="ngForm" (ngSubmit)="onSubmit()">
+    <label for="sentenceInput">Ingrese una oración en inglés:</label>
+    <input type="text" id="sentenceInput" name="sentenceInput" [(ngModel)]="sentence" required>
+    <button type="submit">Validar</button>
+  </form>
+  <p *ngIf="validationResult">Resultado: {{ validationResult }}</p>
+</div>
