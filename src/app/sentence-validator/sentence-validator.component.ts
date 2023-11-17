@@ -4,7 +4,7 @@ import { SentenceValidatorService } from '../sentence-validator.service';
 @Component({
   selector: 'app-sentence-validator',
   templateUrl: './sentence-validator.component.html',
-  styleUrls: ['./sentence-validator.component.css']
+  styleUrls: ['./sentence-validator.component.scss']
 })
 export class SentenceValidatorComponent {
   sentence: string = '';
