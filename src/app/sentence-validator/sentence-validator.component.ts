@@ -8,11 +8,12 @@ import { SentenceValidatorService } from '../sentence-validator.service';
 })
 export class SentenceValidatorComponent {
   sentence: string = '';
-  validationResult: string = '';
+  validationResult: { valid: string[], invalid: string[] } = { valid: [], invalid: [] };
 
   constructor(private sentenceValidatorService: SentenceValidatorService) {}
 
   onSubmit() {
-    this.validationResult = this.sentenceValidatorService.validateSentence(this.sentence);
+    const sentences = this.sentence.split('\n').map(sentence => sentence.trim());
+    this.validationResult = this.sentenceValidatorService.validateSentences(sentences);
   }
 }
